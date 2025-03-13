@@ -368,12 +368,6 @@ void GUIThread() {
             DispatchMessage(&msg);
         }
 
-        //float average = 0.0f;
-        //{
-        //    std::lock_guard<std::mutex> lock(frameMutex);
-        //    for (float val : latestFrame) average += val;
-        //    average /= latestFrame.size();
-        //}
         float average = 0.0f;
         {
             std::lock_guard<std::mutex> lock(frameMutex);
@@ -421,7 +415,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     }
     else
     {
-        wprintf(L"No matching COM port for Fluid Haptics found.\n");
+        wprintf(L"No matching COM port for Touchlab found.\n");
         return -1;
     }
     int baudRate = 115200;
